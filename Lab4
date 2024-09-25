@@ -1,0 +1,65 @@
+# Module 4 Lab 
+# Devin Easby
+# 09/25/2024
+# This program will calculate the Store bonus and the Employee bonus for a company 
+
+# The Main function 
+def main(): 
+    # declare local variables 
+    monthlySales = float(input('Enter number of Monthly Sales: '))
+    salesIncrease = float(input('Enter sales increase (in percentage): ')) / 100
+    
+    #calculate the bonuses
+    storeAmount =  calcStoreBonus(monthlySales)
+    empAmount =  calcEmpBonus(salesIncrease)
+    
+    # call to getSales(monthlySales)
+    # call to getIncrease(salesIncrease)
+    # call to calcStoreBonus(storeAmount)
+    # call to calcEmpbonus(empAmount)
+    printBonus(storeAmount, empAmount)
+
+# This function gets the monthly sales 
+def getSales(monthlySales):
+    monthlySales = float(input('Enter number of Monthly Sales'))
+    return monthlySales
+
+# This function gets the percent of increase in sales 
+def getIncrease(salesIncrease):
+    salesIncrease = float(input('Enter sales increase'))
+    salesIncrease = salesIncrease / 100 
+    return salesIncrease
+
+# This function determines the storeAmount bonus 
+def calcStoreBonus(monthlySales):
+    if monthlySales >= 110000:
+        storeAmount = 6000 
+    elif monthlySales >= 100000:
+        storeAmount = 5000
+    elif monthlySales >= 90000:
+        storeAmount = 4000 
+    elif monthlySales >= 80000:
+        storeAmount = 3000 
+    else: storeAmount = 0
+    return storeAmount 
+
+# This function determines the empAmount bonus 
+def calcEmpBonus(salesIncrease):
+    if salesIncrease >= .05:
+        empAmount = 75
+    elif salesIncrease >= .04: 
+        empAmount = 50
+    elif salesIncrease >= .03: 
+        empAmount = 40 
+    else: empAmount = 0 
+    return empAmount 
+
+# This function prints the bonus information 
+def printBonus(storeAmount, empAmount): 
+    print ('The store bonus amount is $', storeAmount)
+    print ('The employee bonus amount is $', empAmount)
+    if (storeAmount == 6000 ) and (empAmount ==75 ):
+        print('Congrats! you have reached the highest bonus possible! ')
+
+# calls main 
+main()
